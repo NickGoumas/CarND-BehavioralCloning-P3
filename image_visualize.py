@@ -60,7 +60,8 @@ plt.plot([159, train_offset], [130, 80], 'c-', lw=4, alpha=0.8)
 steering_offset = int(math.tan(math.radians(steering_angle)) * 50.0) + 159
 plt.plot([159, steering_offset], [130, 80], 'r-', lw=4, alpha=0.8)
 
-plt.title('Training angle cyan, predicted angle red')
+title = 'Cyan Training Angle: ' + str(round(train_angle,3)) + ' Red Predicted Angle: ' + str(round(steering_angle,3))
+plt.title(title)
 
 # Add overlay to show what part of the image is cropped by the CNN.
 plt.axhspan(0, 60, hold=None, alpha=0.75)
