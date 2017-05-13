@@ -71,16 +71,3 @@ plt.title(title)
 plt.axhspan(0, 65, hold=None, alpha=0.75)
 plt.axhspan(130, 159, hold=None, alpha=0.75)
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
