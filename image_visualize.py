@@ -16,7 +16,7 @@ model = load_model(args.model)
 
 csv_rows = []
 
-with open('sim_data_10_lap/driving_log.csv') as csvfile:
+with open('sim_data_10_lap/driving_log_balanced.csv') as csvfile:
     reader = csv.reader(csvfile)
     for line in reader:
         csv_rows.append(line)
