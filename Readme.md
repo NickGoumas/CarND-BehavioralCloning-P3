@@ -86,36 +86,15 @@ In the model pipeline the images are also flipped horizontally and the steering 
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
+The final model architecture is as follows:
+1. Lambda layer for normilization
+2. Cropping layer to reduce image size
+3. Five convolutional layers 
+4. Fully connected flattening layer
+5. Four Dense layers [100,50,10,1]
 
-Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
-
-![alt text][image1]
+The dropout layers were not used in the final model but left in the code.
 
 #### 3. Creation of the Training Set & Training Process
 
-To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
-
-![alt text][image2]
-
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
-
-![alt text][image3]
-![alt text][image4]
-![alt text][image5]
-
-Then I repeated this process on track two in order to get more data points.
-
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
-
-![alt text][image6]
-![alt text][image7]
-
-Etc ....
-
-After the collection process, I had X number of data points. I then preprocessed this data by ...
-
-
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
-
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
+This was covered in the "Solution Design Approach" but I'll also mention here the extra script image_visualize.py. I used this script to randomly pick an image from the dataset (either the master set or my balanced set), plot the image, overlay the training steering angle, predict and plot the models steering angle and show the cropped section bars above and below the road. This was helpful to tune the size of the cropping as well as to see where the model was getting predicitons wrong more often. It was also a good overview to make sure everything was working in general.
