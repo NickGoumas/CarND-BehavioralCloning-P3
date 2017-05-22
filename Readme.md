@@ -46,9 +46,9 @@ My model is similar to the model described in NVIDIA's paper "End to End Learnin
 
 #### 2. Attempts to reduce overfitting in the model
 
-The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
+The model contains dropout layers but the final model didn't use dropout. It was tested with varying dropout rates and the best validation loss was used. 
 
-The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
 #### 3. Model parameter tuning
 
@@ -62,23 +62,15 @@ For details about how I created the training data, see the next section.
 
 ### Model Architecture and Training Strategy
 
-####1. Solution Design Approach
+#### 1. Solution Design Approach
 
-The overall strategy for deriving a model architecture was to ...
+The design approach went as follows: Collect a large amount of data, balance the data to be used, process the images to increase effectiveness and dataset size, run through the training pipeline.
 
-My first step was to use a convolution neural network model similar to the ... I thought this model might be appropriate because ...
+First a large amount of data was collected from driving the track manually. About ten laps in each direction at first and then a couple laps of recovery driving as well. This gave a large dataset to begin working with. I then created a script to generate a histogram of the images based on steering angle of the training data. This allowed me to visualize how balanced the data was. 
 
-In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. 
+![alt text](https://github.com/NickGoumas/CarND-BehavioralCloning-P3/blob/master/images/original_histogram.png?raw=true "Original Histogram")
 
-To combat the overfitting, I modified the model so that ...
-
-Then I ... 
-
-The final step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track... to improve the driving behavior in these cases, I ....
-
-At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
-
-####2. Final Model Architecture
+#### 2. Final Model Architecture
 
 The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
 
