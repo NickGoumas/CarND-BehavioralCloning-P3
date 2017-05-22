@@ -66,9 +66,14 @@ For details about how I created the training data, see the next section.
 
 The design approach went as follows: Collect a large amount of data, balance the data to be used, process the images to increase effectiveness and dataset size, run through the training pipeline.
 
-First a large amount of data was collected from driving the track manually. About ten laps in each direction at first and then a couple laps of recovery driving as well. This gave a large dataset to begin working with. I then created a script to generate a histogram of the images based on steering angle of the training data. This allowed me to visualize how balanced the data was. 
+First a large amount of data was collected from driving the track manually. About ten laps in each direction at first and then a couple laps of recovery driving as well. This gave a large dataset to begin working with. I then created a script to generate a histogram of the images based on steering angle of the training data. (balanced_csv_gen.py) This allowed me to visualize how balanced the data was, and later correct it. Original data histogram:
 
 ![alt text](https://github.com/NickGoumas/CarND-BehavioralCloning-P3/blob/master/images/original_histogram.png?raw=true "Original Histogram")
+
+The histogram only plots the angles absolute value because I know the images will be flipped in the model pipeline anyway. It's obvious a model trained on this data could easily favor driving strait. What we want is a roughly equal spread of steering angles so the images are the dominating factor, not the number of images of a certain angle. Looking at the balanced_csv_gen.py script will show how I iterated through the large dataset and constructed a smaller but more balanced "driving_log_balanced.csv" file. The histogram for this file: 
+
+![alt text](https://github.com/NickGoumas/CarND-BehavioralCloning-P3/blob/master/images/balanced_histogram.png?raw=true "Balanced Histogram")
+
 
 #### 2. Final Model Architecture
 
