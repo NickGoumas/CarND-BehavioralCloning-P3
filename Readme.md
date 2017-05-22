@@ -74,6 +74,14 @@ The histogram only plots the angles absolute value because I know the images wil
 
 ![alt text](https://github.com/NickGoumas/CarND-BehavioralCloning-P3/blob/master/images/balanced_histogram.png?raw=true "Balanced Histogram")
 
+The total frames represented in each graph is listed in the title. The balanced histogram lost more than two thirds of the data but is now much more balanced. This proved to help the model greatly. It also allowed for faster training as opposed to running the whole dataset through the pipeline.
+
+Once the dataset was ready the model pipeline reads the images and performs some operations to increase the abilities of the model. First the pixel values are normalized, then the images are cropped to reduce uninteresting data. Below are a couple images that that show the training and predicted angles of random images as well as the cropped area. The blue bars on top and bottom of the images are removed before being passed to the model. 
+
+![alt text](https://github.com/NickGoumas/CarND-BehavioralCloning-P3/blob/master/images/good_prediction_fig.png?raw=true "Good Prediction")
+
+![alt text](https://github.com/NickGoumas/CarND-BehavioralCloning-P3/blob/master/images/bad_prediction_fig.png?raw=true "Bad Prediction")
+
 
 #### 2. Final Model Architecture
 
