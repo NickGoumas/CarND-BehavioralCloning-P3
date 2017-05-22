@@ -79,8 +79,9 @@ The total frames represented in each graph is listed in the title. The balanced 
 Once the dataset was ready the model pipeline reads the images and performs some operations to increase the abilities of the model. First the pixel values are normalized, then the images are cropped to reduce uninteresting data. Below are a couple images that that show the training and predicted angles of random images as well as the cropped area. The blue bars on top and bottom of the images are removed before being passed to the model. 
 
 ![alt text](https://github.com/NickGoumas/CarND-BehavioralCloning-P3/blob/master/images/good_prediction_fig.png?raw=true "Good Prediction")
-
 ![alt text](https://github.com/NickGoumas/CarND-BehavioralCloning-P3/blob/master/images/bad_prediction_fig.png?raw=true "Bad Prediction")
+
+In the model pipeline the images are also flipped horizontally and the steering angle's sign is switched. This results in doubling the amount of training data.
 
 
 #### 2. Final Model Architecture
@@ -91,7 +92,7 @@ Here is a visualization of the architecture (note: visualizing the architecture 
 
 ![alt text][image1]
 
-####3. Creation of the Training Set & Training Process
+#### 3. Creation of the Training Set & Training Process
 
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
 
